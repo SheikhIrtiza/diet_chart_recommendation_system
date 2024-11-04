@@ -8,7 +8,7 @@ from schemas import UserInput, MealPlanResponse  # Import schemas
 app = FastAPI()
 
 # Load the data globally to avoid reloading for every request
-data = load_data('recipes.csv')
+data = load_data('src/recipes.csv')
 prepared_data = prepare_data(data)
 
 # Endpoint for calculating daily calorie needs
