@@ -1,13 +1,8 @@
-# main.py
-
 from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
-from typing import Dict
-import pandas as pd
-
-from data_processing import prepare_data, calculate_daily_calories, allocate_calories
-from recommendation_model import get_meal_plan
-from diet_recommendation_system import load_data
+from src.data_processing import prepare_data, calculate_daily_calories, allocate_calories
+from src.recommendation_model import get_meal_plan
+from src.diet_recommendation_system import load_data
+from schemas import UserInput, MealPlanResponse  # Import schemas
 
 # Initialize FastAPI app
 app = FastAPI()
@@ -15,18 +10,6 @@ app = FastAPI()
 # Load the data globally to avoid reloading for every request
 data = load_data('recipes.csv')
 prepared_data = prepare_data(data)
-
-# Define Pydantic models for user input and responses
-
-class UserInput(BaseModel):
-    weight: float
-    height: float
-    age: int
-    gender: str
-
-class MealPlanResponse(BaseModel):
-    meal: str
-    recipes: list
 
 # Endpoint for calculating daily calorie needs
 @app.post("/calculate_calories/")
