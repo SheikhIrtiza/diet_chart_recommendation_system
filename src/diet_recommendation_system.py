@@ -69,7 +69,7 @@ if __name__ == "__main__":
     meal_allocation = allocate_calories(user_daily_calories)
 
     # Prepare data and generate meal plan
-    prepared_data = prepare_data(data)
+    prepared_data, unscaled_data = prepare_data(data)
     meal_plan = get_meal_plan(prepared_data, meal_allocation)
 
     # Display final diet chart

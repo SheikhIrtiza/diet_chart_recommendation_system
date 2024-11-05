@@ -17,12 +17,9 @@ app = FastAPI()
 data = load_data('src/recipes.csv')
 prepared_data, unscaled_data = prepare_data(data)  # Now returning both scaled and unscaled data
 
-
-# Root endpoint to display custom welcome message
 @app.get("/")
 def read_root():
     return {"message": "Welcome to the Meal Plan Generator API!"}
-
 
 @app.post("/generate_meal_plan/")
 def generate_meal_plan(user_input: UserInput):
