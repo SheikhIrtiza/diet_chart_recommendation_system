@@ -12,7 +12,7 @@ This project provides a Meal Plan Generator API that recommends diet plans based
 
 ## Dataset
 
-The dataset used for this project is sourced from Kaggle. You can find it [here](Food.com - Recipes and Reviews).
+The dataset used for this project is sourced from Kaggle. You can find it [here](https://www.kaggle.com/datasets/irkaal/foodcom-recipes-and-reviews?select=recipes.csv).
 
 
 ## How to Run
