@@ -23,7 +23,7 @@ prepared_data, unscaled_data = prepare_data(data)  # Now returning both scaled a
 def read_root():
     return {"message": "Welcome to the Meal Plan Generator API!"}
 
-# Combined endpoint to calculate calories and get meal plan
+
 @app.post("/generate_meal_plan/")
 def generate_meal_plan(user_input: UserInput):
     # Validate gender input
@@ -46,10 +46,8 @@ def generate_meal_plan(user_input: UserInput):
     
     # Format the response using unscaled data for accurate values
     response = {
-        "daily_calories": round(daily_calories, 1),
         "meal_plan": {
             meal: {
-                "target_calories": round(meal_allocation[meal], 1),
                 "recipes": [
                     {
                         "RecipeId": row["RecipeId"],
